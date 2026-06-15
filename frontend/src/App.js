@@ -1,53 +1,47 @@
-import { useEffect } from "react";
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-import { HOME } from "@/constants/testIds";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Toaster } from "sonner";
+import { AuthProvider } from "@/lib/auth";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Home from "@/pages/Home";
+import News from "@/pages/News";
+import Events from "@/pages/Events";
+import RadioPage from "@/pages/RadioPage";
+import About from "@/pages/About";
+import AdminLogin from "@/pages/AdminLogin";
+import AdminDashboard from "@/pages/AdminDashboard";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
+function Layout({ children }) {
+  const location = useLocation();
+  const isAdmin = location.pathname.startsWith("/admin");
   return (
-    <div>
-      <header className="App-header">
-        <a
-          data-testid={HOME.emergentLink}
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <main>{children}</main>
+      {!isAdmin && <Footer />}
+    </>
   );
-};
+}
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
+        <AuthProvider>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/noticias" element={<News />} />
+              <Route path="/eventos" element={<Events />} />
+              <Route path="/radio" element={<RadioPage />} />
+              <Route path="/nosotros" element={<About />} />
+              <Route path="/admin" element={<AdminLogin />} />
+              <Route path="/admin/panel" element={<AdminDashboard />} />
+            </Routes>
+          </Layout>
+          <Toaster position="top-right" richColors />
+        </AuthProvider>
       </BrowserRouter>
     </div>
   );
