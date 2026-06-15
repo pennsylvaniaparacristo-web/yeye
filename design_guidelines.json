@@ -1,0 +1,86 @@
+{
+  "project": {
+    "name": "Iglesia Nueva Vida Internacional",
+    "type": "hybrid_fullstack",
+    "language": "es-419"
+  },
+  "theme": {
+    "mode": "Light",
+    "archetype": "1_organic_earthy_mixed_with_4_swiss_high_contrast",
+    "vibe": "Cálido y acogedor meets Moderno y sobrio",
+    "colors": {
+      "background": "#FAF9F6",
+      "surface": "#FFFFFF",
+      "surface_alt": "#F0EDE6",
+      "primary": "#B85A3A",
+      "primary_hover": "#9A4A2F",
+      "secondary": "#2C302E",
+      "secondary_hover": "#1C1C1C",
+      "text_main": "#1C1C1C",
+      "text_muted": "#5C5C5C",
+      "border": "#E2DFD8"
+    },
+    "typography": {
+      "headings_font": "Outfit",
+      "body_font": "DM Sans",
+      "rules": "Never use Inter. Headings must have tracking-tight. Line height tight for headers, loose for body."
+    }
+  },
+  "layout_strategy": {
+    "spacing": "Generous. p-8 to p-12 minimum for main sections.",
+    "bento_grid": "Tetris Mode (grid-cols-1 md:grid-cols-12 gap-8) for News and Events to break symmetry."
+  },
+  "components": {
+    "navigation": {
+      "style": "Glassmorphism (backdrop-blur-xl bg-white/80) with 1px border-b border-black/5.",
+      "items": ["Inicio", "Noticias", "Eventos", "Radio", "Nosotros", "Admin"],
+      "data_testid": "main-nav"
+    },
+    "hero": {
+      "style": "Full width, image background with bg-black/40 overlay. Text aligned left. Large Outfit H1.",
+      "data_testid": "hero-section"
+    },
+    "radio_player": {
+      "name": "Impacto de Dios al Pueblo",
+      "style": "Compact cardless or neumorphic flat design. Dark theme (bg-[#2C302E]) text-white. Include play/pause button (primary color), volume, 'En Vivo' indicator.",
+      "data_testid": "radio-player-widget"
+    },
+    "news_events_section": {
+      "style": "Tetris bento grid. Featured event spans 8 columns, news span 4 columns. Containers with borders must have internal padding p-6 or p-8.",
+      "data_testid": "news-events-grid"
+    },
+    "admin_dashboard": {
+      "style": "Dense Control Room Grid. 1px borders, cardless. High contrast.",
+      "data_testid": "admin-dashboard"
+    }
+  },
+  "media": {
+    "images": [
+      {
+        "category": "hero_background",
+        "url": "https://images.unsplash.com/photo-1600210492493-0946911123ea?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHwyfHx3YXJtJTIwbW9kZXJuJTIwaW50ZXJpb3IlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzgxNTM0ODkyfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Warm welcoming interior for the hero section."
+      },
+      {
+        "category": "radio_accent",
+        "url": "https://images.unsplash.com/photo-1485579149621-3123dd979885?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzZ8MHwxfHNlYXJjaHwxfHxyYWRpbyUyMGJyb2FkY2FzdCUyMG1pY3JvcGhvbmV8ZW58MHx8fHwxNzgxNTM0ODkyfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Microphone image for radio section visual interest."
+      },
+      {
+        "category": "event_placeholder",
+        "url": "https://images.unsplash.com/photo-1724582586529-62622e50c0b3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHwxfHx3YXJtJTIwbW9kZXJuJTIwaW50ZXJpb3IlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzgxNTM0ODkyfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Modern clean interior for featured event backgrounds."
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Write all public-facing content in Latin American Spanish.",
+    "Use .js files (not .tsx) for React components.",
+    "Ensure the radio player is embedded on the same page, not redirecting.",
+    "Add 'data-testid' attributes to all interactive and key informational elements (buttons, links, inputs).",
+    "Use @phosphor-icons/react or lucide-react for an elegant look.",
+    "Follow 'Cálido y acogedor' combined with 'Moderno y sobrio'. High contrast, clean layouts, warm colors.",
+    "Build the admin dashboard for managing news and events using Shadcn components.",
+    "Avoid using Shadcn Cards for the public marketing layout; use pure HTML/Tailwind for the Bento Grid."
+  ]
+}
