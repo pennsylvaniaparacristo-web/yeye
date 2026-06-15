@@ -93,17 +93,21 @@ export default function About() {
             <ul className="mt-6 space-y-3 text-white/85">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="mt-0.5 shrink-0 text-[color:var(--inv-primary)]" />
-                Scranton, Pennsylvania
+                120 S Main Ave, Scranton, PA
               </li>
               <li className="flex items-start gap-3">
                 <Phone size={18} className="mt-0.5 shrink-0 text-[color:var(--inv-primary)]" />
-                (570) 000-0000
+                <a href="tel:+16313526314" className="hover:text-white transition-colors">(631) 352-6314</a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail size={18} className="mt-0.5 shrink-0 text-[color:var(--inv-primary)]" />
-                info@iglesianuevavida.org
+                <span className="text-white/55 italic">Email próximamente</span>
               </li>
             </ul>
+            <div className="mt-6 pt-6 border-t border-white/10 text-sm text-white/70">
+              <div className="text-xs uppercase tracking-[0.18em] opacity-70 mb-1">Pastores</div>
+              Carmen Ayala &amp; Gelasio Ayala
+            </div>
           </div>
           <div className="rounded-2xl bg-surface-alt p-8 md:p-12 border border-warm">
             <div className="text-xs uppercase tracking-[0.18em] text-[color:var(--inv-text-muted)] mb-3">
@@ -115,15 +119,15 @@ export default function About() {
             <ul className="mt-6 space-y-3 text-[color:var(--inv-text)]">
               <li className="flex justify-between border-b border-warm pb-3">
                 <span className="font-medium">Domingo</span>
-                <span className="text-[color:var(--inv-text-muted)]">10:00 AM · 6:00 PM</span>
+                <span className="text-[color:var(--inv-text-muted)]">10:00 AM – 1:00 PM</span>
               </li>
               <li className="flex justify-between border-b border-warm pb-3">
                 <span className="font-medium">Miércoles · Estudio bíblico</span>
-                <span className="text-[color:var(--inv-text-muted)]">7:30 PM</span>
+                <span className="text-[color:var(--inv-text-muted)]">7:00 PM – 9:00 PM</span>
               </li>
               <li className="flex justify-between">
-                <span className="font-medium">Viernes · Jóvenes</span>
-                <span className="text-[color:var(--inv-text-muted)]">7:30 PM</span>
+                <span className="font-medium">Viernes · Servicio</span>
+                <span className="text-[color:var(--inv-text-muted)]">7:00 PM – 9:00 PM</span>
               </li>
             </ul>
           </div>

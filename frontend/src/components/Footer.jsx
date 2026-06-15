@@ -20,6 +20,9 @@ export default function Footer() {
             Iglesia pentecostal cristiana en Scranton, Pennsylvania. Predicando
             el evangelio con poder, fe y amor.
           </p>
+          <p className="text-white/55 text-xs mt-3">
+            Pastores: Carmen Ayala y Gelasio Ayala
+          </p>
         </div>
 
         <div>
@@ -29,15 +32,15 @@ export default function Footer() {
           <ul className="space-y-3 text-sm text-white/75">
             <li className="flex items-start gap-2">
               <MapPin size={16} className="mt-0.5 shrink-0" />
-              <span>Scranton, PA, Estados Unidos</span>
+              <span>120 S Main Ave, Scranton, PA</span>
             </li>
             <li className="flex items-start gap-2">
               <Phone size={16} className="mt-0.5 shrink-0" />
-              <span>(570) 000-0000</span>
+              <a href="tel:+16313526314" className="hover:text-white transition-colors">(631) 352-6314</a>
             </li>
             <li className="flex items-start gap-2">
               <Mail size={16} className="mt-0.5 shrink-0" />
-              <span>info@iglesianuevavida.org</span>
+              <span className="text-white/50 italic">Próximamente</span>
             </li>
           </ul>
         </div>
@@ -49,15 +52,15 @@ export default function Footer() {
           <ul className="space-y-2 text-sm text-white/75">
             <li className="flex justify-between">
               <span>Domingo</span>
-              <span>10:00 AM · 6:00 PM</span>
+              <span>10:00 AM – 1:00 PM</span>
             </li>
             <li className="flex justify-between">
-              <span>Miércoles</span>
-              <span>7:30 PM</span>
+              <span>Miércoles (Estudio bíblico)</span>
+              <span>7:00 PM – 9:00 PM</span>
             </li>
             <li className="flex justify-between">
-              <span>Viernes (Jóvenes)</span>
-              <span>7:30 PM</span>
+              <span>Viernes (Servicio)</span>
+              <span>7:00 PM – 9:00 PM</span>
             </li>
           </ul>
         </div>
